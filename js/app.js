@@ -17,7 +17,7 @@ if (data) {
   id = LIST.length;
   loadList(LIST);
 } else {
-  list = [];
+  LIST = [];
   id = 0;
 }
 //load items to user interface
@@ -26,6 +26,11 @@ function loadList(arr) {
     addToDo(item.name, item.id, item.done, item.trash);
   });
 }
+//clear storage
+clear.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});
 
 //Time
 const options = { weekday: "long", month: "short", day: "numeric" };
